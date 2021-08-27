@@ -23,8 +23,9 @@ LOGS_DIR.mkdir(parents=True, exist_ok=True)
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 # Files
-DATASET_PATH = Path(BASE_DIR, "data/titanic.csv")
-PROCESSED_DATASET_PATH = Path(BASE_DIR, "data/titanic_processed.csv")
+TRAIN_DATASET_PATH = Path(BASE_DIR, "data/titanic.csv")
+PROCESSED_TRAIN_DATASET_PATH = Path(BASE_DIR, "data/titanic_train_processed.csv")
+PROCESSED_TEST_DATASET_PATH = Path(BASE_DIR, "data/titanic_test_processed.csv")
 
 # URL
 DATASET_URL = "http://bit.ly/kaggletrain"

@@ -4,7 +4,6 @@ import wget
 
 
 from app import config
-from titanic_classification import utils
 from app.config import logger
 
 
@@ -12,7 +11,7 @@ import pandas as pd
 
 def download_data_from_url(url):
 
-    dataset_filepath = str(config.DATASET_PATH)
+    dataset_filepath = str(config.TRAIN_DATASET_PATH)
 
     if not os.path.isfile(dataset_filepath):
         wget.download(url, dataset_filepath)

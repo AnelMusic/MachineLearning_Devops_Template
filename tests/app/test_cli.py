@@ -15,7 +15,9 @@ from typer.testing import CliRunner
 
 
 from app import config
-from titanic_classification.config import logger, utils
+
+
+from app.cli import app
 
 runner = CliRunner()
 

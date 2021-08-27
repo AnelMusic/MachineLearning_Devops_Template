@@ -2,7 +2,6 @@
 
 from app import config
 from titanic_classification import utils
-from app.config import logger
 
 import titanic_classification.feature_engineering as fe
 
@@ -10,6 +9,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
+from sklearn.model_selection import train_test_split
 
 import pandas as pd
 
@@ -19,6 +19,19 @@ methods to be tested
 
 """
 def run_preprocessing_pipeline(data_df):
+    """
+
+
+    Parameters
+    ----------
+    data_df : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    None.
+
+    """
 
 
     features = ['Pclass', 'Age', 'Fare', 'Title', 'Embarked',
@@ -31,16 +44,13 @@ def run_preprocessing_pipeline(data_df):
                         ]
 
     X = data_df[features]
-    # evtl here try except
     y = data_df['Survived']
-    # zwecks feature in test_data
 
     numerical_transformer = SimpleImputer(strategy='median')
     categorical_transformer = Pipeline(steps=[
         ('imputer', SimpleImputer(strategy='most_frequent')),
         ('onehot', OneHotEncoder(handle_unknown='ignore'))
         ])
-
 
     # Bundle preprocessing for numerical and categorical data
     column_trans = ColumnTransformer(
@@ -54,34 +64,24 @@ def run_preprocessing_pipeline(data_df):
     # Pipeline result = scipy.sparse.csr_matrix
     # Must be transformed otherwise its interpreted as 1D array
     processed = processed.toarray()
-
-
     num_samples, num_features = processed.shape
     feature_list = utils.get_artificial_feature_list(num_features)
-
     pocessed_df = pd.DataFrame(data=processed, columns = feature_list)
-
-    # Append Target var after feature
     pocessed_df['Survived'] = y
-    utils.save_data(pocessed_df, config.PROCESSED_DATASET_PATH)
 
-    """
-    TODO
-    Preprocessing Train data different than test data !!!!
-    Feature Survived not inside Test data
-    Must be tackled
-    """
+    return pocessed_df
+
+def split_and_store_dataset(data_frame):
+    train, test = train_test_split(data_frame, test_size=0.2)
+    utils.save_data(train, config.PROCESSED_TRAIN_DATASET_PATH)
+    utils.save_data(test, config.PROCESSED_TEST_DATASET_PATH)
 
 
 def process_dataset():
-    data_df = utils.load_data(config.DATASET_PATH)
+    data_df = utils.load_data(config.TRAIN_DATASET_PATH)
     fe.perform_feature_engineering(data_df)
-    run_preprocessing_pipeline(data_df)
-
-    # Test
-    processed_data = utils.load_data(config.PROCESSED_DATASET_PATH)
-    print(processed_data.head)
+    processed_data_df = run_preprocessing_pipeline(data_df)
+    split_and_store_dataset(processed_data_df)
 
 
 process_dataset()
-

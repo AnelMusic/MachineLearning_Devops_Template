@@ -7,22 +7,24 @@ Created on Thu Aug 26 19:17:12 2021
 """
 
 
+
+
 import great_expectations as ge
-import pandas as pd
 from app import config
-from titanic_classification.config import logger, utils
+from titanic_classification import utils
 
 import pytest
 
 
+
 @pytest.fixture(scope = 'module')
 def dataset_df():
-    data_df = utils.load_data(config.DATASET_PATH)
+    data_df = utils.load_data(config.TRAIN_DATASET_PATH)
     return  ge.dataset.PandasDataset(data_df)
 
 
 def test_features_present(dataset_df):
-    expected_columns = ["PassengerId", "Survived", "Pclass",
+    expected_columns = ["Survived", "Pclass",
                         "Name", "Sex", "Age",
                         "SibSp", "Parch", "Ticket",
                         "Fare", "Cabin", "Embarked"
@@ -57,8 +59,4 @@ def test_age_type_float(dataset_df):
     result = dataset_df.expect_column_values_to_be_of_type(
         column="Age", type_ ="float"
         )
-    assert result["success"]
-
-def test_has_unique_passengerid(dataset_df):
-    result = dataset_df.expect_column_values_to_be_unique(column="PassengerId")
     assert result["success"]
