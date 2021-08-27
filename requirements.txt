@@ -1,0 +1,12 @@
+matplotlib==3.2.2
+numpy==1.19.5
+numpyencoder==0.3.0
+pandas==1.1.5
+rich==10.0.0
+scikit-multilearn==0.2.0
+seaborn==0.11.1
+sklearn==0.0
+typer==0.3.2
+uvicorn[standard]==0.13.3
+wget
+
