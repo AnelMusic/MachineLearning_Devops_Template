@@ -17,19 +17,23 @@ CONFIG_DIR = Path(BASE_DIR, "config")
 LOGS_DIR = Path(BASE_DIR, "logs")
 DATA_DIR = Path(BASE_DIR, "data")
 
-
 # Create dirs
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
 DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+# URL
+DATASET_URL = "http://bit.ly/kaggletrain"
 
 # Files
 TRAIN_DATASET_PATH = Path(BASE_DIR, "data/titanic.csv")
 PROCESSED_TRAIN_DATASET_PATH = Path(BASE_DIR, "data/titanic_train_processed.csv")
 PROCESSED_TEST_DATASET_PATH = Path(BASE_DIR, "data/titanic_test_processed.csv")
 
-# URL
-DATASET_URL = "http://bit.ly/kaggletrain"
+# Prediction
+PREDICTION_USER_DATA = Path(BASE_DIR, "data/prediction_data.csv")
 
+# MODEL
+MODEL_PATH = Path(BASE_DIR, "titanic_classifier.pkl")
 
 # Logger
 logging_config = {

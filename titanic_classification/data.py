@@ -1,23 +1,20 @@
-
-
-from app import config
-from titanic_classification import utils
+import pandas as pd
+from sklearn.compose import ColumnTransformer
+from sklearn.impute import SimpleImputer
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder
 
 import titanic_classification.feature_engineering as fe
-
-from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import train_test_split
-
-import pandas as pd
-
+from app import config
+from titanic_classification import utils
 
 """
 methods to be tested
 
 """
+
+
 def run_preprocessing_pipeline(data_df):
     """
 
@@ -33,31 +30,44 @@ def run_preprocessing_pipeline(data_df):
 
     """
 
-
-    features = ['Pclass', 'Age', 'Fare', 'Title', 'Embarked',
-                'Fam_type', 'Ticket_len', 'Ticket_2letter'
-                ]
-    numerical_cols = ['Age','Fare']
-    categorical_cols = ['Pclass', 'Title',
-                        'Embarked', 'Fam_type',
-                        'Ticket_len', 'Ticket_2letter'
-                        ]
+    features = [
+        "Pclass",
+        "Age",
+        "Fare",
+        "Title",
+        "Embarked",
+        "Fam_type",
+        "Ticket_len",
+        "Ticket_2letter",
+    ]
+    numerical_cols = ["Age", "Fare"]
+    categorical_cols = [
+        "Pclass",
+        "Title",
+        "Embarked",
+        "Fam_type",
+        "Ticket_len",
+        "Ticket_2letter",
+    ]
 
     X = data_df[features]
-    y = data_df['Survived']
+    y = data_df["Survived"]
 
-    numerical_transformer = SimpleImputer(strategy='median')
-    categorical_transformer = Pipeline(steps=[
-        ('imputer', SimpleImputer(strategy='most_frequent')),
-        ('onehot', OneHotEncoder(handle_unknown='ignore'))
-        ])
+    numerical_transformer = SimpleImputer(strategy="median")
+    categorical_transformer = Pipeline(
+        steps=[
+            ("imputer", SimpleImputer(strategy="most_frequent")),
+            ("onehot", OneHotEncoder(handle_unknown="ignore")),
+        ]
+    )
 
     # Bundle preprocessing for numerical and categorical data
     column_trans = ColumnTransformer(
         transformers=[
-            ('num', numerical_transformer, numerical_cols),
-            ('cat', categorical_transformer, categorical_cols)
-        ])
+            ("num", numerical_transformer, numerical_cols),
+            ("cat", categorical_transformer, categorical_cols),
+        ]
+    )
 
     processed = column_trans.fit_transform(X)
 
@@ -66,10 +76,11 @@ def run_preprocessing_pipeline(data_df):
     processed = processed.toarray()
     num_samples, num_features = processed.shape
     feature_list = utils.get_artificial_feature_list(num_features)
-    pocessed_df = pd.DataFrame(data=processed, columns = feature_list)
-    pocessed_df['Survived'] = y
+    pocessed_df = pd.DataFrame(data=processed, columns=feature_list)
+    pocessed_df["Survived"] = y
 
     return pocessed_df
+
 
 def split_and_store_dataset(data_frame):
     train, test = train_test_split(data_frame, test_size=0.2)

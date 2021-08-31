@@ -8,9 +8,8 @@ from pathlib import Path
 import typer
 
 from app import config
-from titanic_classification import utils
 from app.config import logger
-
+from titanic_classification import utils
 
 # Ignore warning
 warnings.filterwarnings("ignore")

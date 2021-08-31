@@ -13,10 +13,7 @@ from pathlib import Path
 
 from typer.testing import CliRunner
 
-
 from app import config
-
-
 from app.cli import app
 
 runner = CliRunner()
