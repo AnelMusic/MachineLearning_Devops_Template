@@ -1,0 +1,15 @@
+artifact_uri: file:///home/anelmusic/anel_projects/mlops_project_titanic/mlruns/0/c5ec1b5f565d4b1e8a2bb16f2008fa73/artifacts
+end_time: 1630523515180
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: c5ec1b5f565d4b1e8a2bb16f2008fa73
+run_uuid: c5ec1b5f565d4b1e8a2bb16f2008fa73
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1630523513914
+status: 3
+tags: []
+user_id: anelmusic
