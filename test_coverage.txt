@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-6.0.2, py-1.10.0, pluggy-0.13.1
+rootdir: /home/anelmusic/anel_projects/mlops_project_titanic, configfile: pyproject.toml, testpaths: tests
+plugins: cov-2.10.1
+collected 19 items
+
+tests/app/test_cli.py ....                                               [ 21%]
+tests/data/test_test_data_processed.py ....                              [ 42%]
+tests/data/test_train_data_processed.py ....                             [ 63%]
+tests/data/test_train_data_raw.py .......                                [100%]
+
+----------- coverage: platform linux, python 3.8.5-final-0 -----------
+Name                                      Stmts   Miss  Cover
+-------------------------------------------------------------
+tests/app/test_cli.py                        26      3    88%
+tests/data/test_test_data_processed.py       19      0   100%
+tests/data/test_train_data_processed.py      19      0   100%
+tests/data/test_train_data_raw.py            30      0   100%
+-------------------------------------------------------------
+TOTAL                                        94      3    97%
+
+
+============================== 19 passed in 1.52s ==============================

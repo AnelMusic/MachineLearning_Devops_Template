@@ -6,7 +6,8 @@ SHELL := /bin/bash
 help:
 	@echo "Commands:"
 	@echo "venv   : creates development environment."
-	@echo "style  : runs style formatting."
+	@echo "style  : runs style formatting."	
+	@echo "test  : runs style formatting."
 	@echo "clean  : cleans all unecessary files."
 
 # Environment
@@ -24,6 +25,11 @@ style:
 	black . --exclude ./venv	
 	flake8 # venv excluded in .flake8 file
 	isort .
+
+# Testing
+.PHONY: test
+test:
+	pytest --cov=tests > test_coverage.txt	
 
 # Cleaning
 .PHONY: clean
