@@ -25,7 +25,7 @@ multi_line_output = 3
 include_trailing_comma = true
 skip_gitignore = true
 virtual_env = "venv"
-
+#
 # Pytest
 [tool.pytest.ini_options]
 testpaths = ["tests"]
