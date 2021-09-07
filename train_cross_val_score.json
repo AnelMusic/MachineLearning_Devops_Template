@@ -1,4 +1,4 @@
 {"model": "RandomForestClassifier(max_depth=5, n_estimators=500, random_state=0)", "cv_score": 0.8440953412784399}
 {"model": "RandomForestClassifier(max_depth=5, n_estimators=500, random_state=0)", "cv_score": 0.8440953412784399}
 {"model": "RandomForestClassifier(max_depth=5, n_estimators=500, random_state=0)", "cv_score": 0.8440953412784399}
-{"model": "RandomForestClassifier(max_depth=5, n_estimators=500, random_state=0)", "cv_score": 0.8440953412784399}
+{"model": "RandomForestClassifier(max_depth=5, n_estimators=500, random_state=0)", "cv_score": 0.84409534127843991}
