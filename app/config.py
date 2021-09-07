@@ -35,6 +35,18 @@ PREDICTION_USER_DATA = Path(BASE_DIR, "data/prediction_data.csv")
 # MODEL
 MODEL_PATH = Path(BASE_DIR, "titanic_classifier.pkl")
 
+# Features
+FEATURES = [
+    "Pclass",
+    "Age",
+    "Fare",
+    "Title",
+    "Embarked",
+    "Fam_type",
+    "Ticket_len",
+    "Ticket_2letter",
+]
+
 # Logger
 logging_config = {
     "version": 1,

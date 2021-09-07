@@ -12,10 +12,11 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score
 
 from app import config
 from app.config import logger
-from titanic_classification import utils
+from titanic_classification import utils, data
+import pandas as pd
 
 
-def predict_sample():
+def predict_sample_processed():
     data_df = utils.load_data(config.PREDICTION_USER_DATA)
 
 
@@ -29,5 +30,4 @@ def predict_sample():
         print(repr(e))
         logger.error(repr(e))
 
-
-predict_sample()
+predict_sample_raw()

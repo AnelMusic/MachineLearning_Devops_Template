@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/anelmusic/anel_projects/mlops_project_titanic/venv/lib/python3.8/site-packages/spyder/app/mainwindow.py", line 2998, in main
+    mainwindow = run_spyder(app, options, args)
+  File "/home/anelmusic/anel_projects/mlops_project_titanic/venv/lib/python3.8/site-packages/spyder/app/mainwindow.py", line 2902, in run_spyder
+    main.setup()
+  File "/home/anelmusic/anel_projects/mlops_project_titanic/venv/lib/python3.8/site-packages/spyder/app/mainwindow.py", line 883, in setup
+    from spyder.plugins.ipythonconsole import IPythonConsole
+  File "/home/anelmusic/anel_projects/mlops_project_titanic/venv/lib/python3.8/site-packages/spyder/plugins/ipythonconsole.py", line 59, in <module>
+    from spyder.widgets.ipythonconsole import ClientWidget
+  File "/home/anelmusic/anel_projects/mlops_project_titanic/venv/lib/python3.8/site-packages/spyder/widgets/ipythonconsole/__init__.py", line 14, in <module>
+    from .namespacebrowser import NamepaceBrowserWidget
+  File "/home/anelmusic/anel_projects/mlops_project_titanic/venv/lib/python3.8/site-packages/spyder/widgets/ipythonconsole/namespacebrowser.py", line 14, in <module>
+    from ipykernel.pickleutil import CannedObject
+  File "/home/anelmusic/anel_projects/mlops_project_titanic/venv/lib/python3.8/site-packages/ipykernel/pickleutil.py", line 21, in <module>
+    from ipyparallel.serialize import codeutil  # noqa F401
+ModuleNotFoundError: No module named 'ipyparallel'

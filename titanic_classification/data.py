@@ -30,16 +30,7 @@ def run_preprocessing_pipeline(data_df):
 
     """
 
-    features = [
-        "Pclass",
-        "Age",
-        "Fare",
-        "Title",
-        "Embarked",
-        "Fam_type",
-        "Ticket_len",
-        "Ticket_2letter",
-    ]
+    features = config.FEATURES
     numerical_cols = ["Age", "Fare"]
     categorical_cols = [
         "Pclass",
@@ -52,6 +43,7 @@ def run_preprocessing_pipeline(data_df):
 
     X = data_df[features]
     y = data_df["Survived"]
+
 
     numerical_transformer = SimpleImputer(strategy="median")
     categorical_transformer = Pipeline(
@@ -74,9 +66,18 @@ def run_preprocessing_pipeline(data_df):
     # Pipeline result = scipy.sparse.csr_matrix
     # Must be transformed otherwise its interpreted as 1D array
     processed = processed.toarray()
+
     num_samples, num_features = processed.shape
+
     feature_list = utils.get_artificial_feature_list(num_features)
     pocessed_df = pd.DataFrame(data=processed, columns=feature_list)
+
+
+    print(pocessed_df.columns.values)
+    print(pocessed_df.columns.values)
+    print(pocessed_df.columns.values)
+    print(pocessed_df.columns.values)
+
     pocessed_df["Survived"] = y
 
     return pocessed_df
@@ -91,6 +92,7 @@ def split_and_store_dataset(data_frame):
 def process_dataset():
     data_df = utils.load_data(config.TRAIN_DATASET_PATH)
     fe.perform_feature_engineering(data_df)
+    print(list(data_df.columns.values))
     processed_data_df = run_preprocessing_pipeline(data_df)
     split_and_store_dataset(processed_data_df)
 
