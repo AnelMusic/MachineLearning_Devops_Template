@@ -6,8 +6,8 @@ SHELL := /bin/bash
 help:
 	@echo "Commands:"
 	@echo "venv   : creates development environment."
-	@echo "style  : runs style formatting."	
-	@echo "test  : runs style formatting."
+	@echo "style  : runs style formatting."
+	@echo "pytest  : runs pytest."
 	@echo "clean  : cleans all unecessary files."
 
 # Environment
@@ -17,23 +17,24 @@ venv:
 	source venv/bin/activate && \
 	python -m pip install --upgrade pip setuptools wheel && \
 	python -m pip install -e ".[dev]"
-	
+
 
 # Styling
 .PHONY: style
 style:
-	black . --exclude ./venv	
+	black . --exclude ./venv
 	flake8 # venv excluded in .flake8 file
 	isort .
 
-# Testing
-.PHONY: test
-test:
-	pytest --cov=tests > test_coverage.txt	
+# Py Testing
+.PHONY: pytest
+pytest:
+	pytest --cov=tests > test_coverage.txt  && \
+	pytest -v
 
 # Cleaning
 .PHONY: clean
-clean: 
+clean:
 	find . -type f -name "*.DS_Store" -ls -delete
 	find . | grep -E "(__pycache__|\.pyc|\.pyo)" | xargs rm -rf
 	find . | grep -E ".pytest_cache" | xargs rm -rf

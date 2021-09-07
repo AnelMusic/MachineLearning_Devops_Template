@@ -16,6 +16,7 @@ BASE_DIR = Path(__file__).parent.parent.absolute()
 CONFIG_DIR = Path(BASE_DIR, "config")
 LOGS_DIR = Path(BASE_DIR, "logs")
 DATA_DIR = Path(BASE_DIR, "data")
+MODEL_DIR = Path(BASE_DIR, "model")
 
 # Create dirs
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
@@ -33,7 +34,9 @@ PROCESSED_TEST_DATASET_PATH = Path(BASE_DIR, "data/titanic_test_processed.csv")
 PREDICTION_USER_DATA = Path(BASE_DIR, "data/prediction_data.csv")
 
 # MODEL
-MODEL_PATH = Path(BASE_DIR, "titanic_classifier.pkl")
+MODEL_PATH = Path(BASE_DIR, "model/titanic_classifier.pkl")
+BEST_MODEL_PATH = Path(BASE_DIR, "model/best_model.json")
+BEST_MODEL_PERFORMANCE_PATH = Path(BASE_DIR, "model/model_performance.json")
 
 # Features
 FEATURES = [

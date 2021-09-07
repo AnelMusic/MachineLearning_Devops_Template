@@ -44,7 +44,6 @@ def run_preprocessing_pipeline(data_df):
     X = data_df[features]
     y = data_df["Survived"]
 
-
     numerical_transformer = SimpleImputer(strategy="median")
     categorical_transformer = Pipeline(
         steps=[
@@ -71,12 +70,6 @@ def run_preprocessing_pipeline(data_df):
 
     feature_list = utils.get_artificial_feature_list(num_features)
     pocessed_df = pd.DataFrame(data=processed, columns=feature_list)
-
-
-    print(pocessed_df.columns.values)
-    print(pocessed_df.columns.values)
-    print(pocessed_df.columns.values)
-    print(pocessed_df.columns.values)
 
     pocessed_df["Survived"] = y
 

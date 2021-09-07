@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 Created on Thu Aug 26 20:47:33 2021
 
@@ -10,9 +9,7 @@ import pandas as pd
 
 
 def create_title_feature(data_frame):
-    data_frame["Title"] = data_frame["Name"].apply(
-        lambda x: x.split(",")[1].split(".")[0].strip()
-    )
+    data_frame["Title"] = data_frame["Name"].apply(lambda x: x.split(",")[1].split(".")[0].strip())
 
     data_frame["Title"].replace(
         ["Mme", "Ms", "Lady", "Mlle", "the Countess", "Dona"], "Miss", inplace=True

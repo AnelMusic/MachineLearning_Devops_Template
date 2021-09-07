@@ -13,9 +13,7 @@ def dataset_df():
 
 def test_features_present(dataset_df):
     expected_columns = [*utils.get_artificial_feature_list(89), *["Survived"]]
-    result = dataset_df.expect_table_columns_to_match_ordered_list(
-        column_list=expected_columns
-    )
+    result = dataset_df.expect_table_columns_to_match_ordered_list(column_list=expected_columns)
     assert result["success"]
 
 

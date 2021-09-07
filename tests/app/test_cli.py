@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 Created on Wed Aug 25 23:22:32 2021
 
@@ -25,17 +24,13 @@ def test_download_data():
     assert "Data" in result.stdout
 
 
-def test_show_dataset_head(
-    params_fp: Path = Path(config.CONFIG_DIR, "params.json")
-) -> None:
+def test_show_dataset_head(params_fp: Path = Path(config.CONFIG_DIR, "params.json")) -> None:
     result = runner.invoke(app, ["show-dataset-head"])
     assert result.exit_code == 0
     assert "TODO" in result.stdout
 
 
-def test_compute_features(
-    params_fp: Path = Path(config.CONFIG_DIR, "params.json")
-) -> None:
+def test_compute_features(params_fp: Path = Path(config.CONFIG_DIR, "params.json")) -> None:
     result = runner.invoke(app, ["get-features"])
     assert result.exit_code == 0
     assert "TODO" in result.stdout

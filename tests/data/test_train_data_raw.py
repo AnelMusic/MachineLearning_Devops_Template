@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 Created on Thu Aug 26 19:17:12 2021
 
@@ -34,9 +33,7 @@ def test_features_present(dataset_df):
         "Cabin",
         "Embarked",
     ]
-    result = dataset_df.expect_table_columns_to_match_ordered_list(
-        column_list=expected_columns
-    )
+    result = dataset_df.expect_table_columns_to_match_ordered_list(column_list=expected_columns)
     assert result["success"]
 
 
