@@ -10,4 +10,6 @@ typer==0.3.2
 uvicorn[standard]==0.13.3
 mlflow==1.13.1
 wget
+dvc==2.1.0
+uvicorn[standard]==0.13.3
 
