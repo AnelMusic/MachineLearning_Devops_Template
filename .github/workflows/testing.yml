@@ -26,6 +26,6 @@ jobs:
           python -m pip install -e ".[test]" --no-cache-dir
       - name: Perform Feature Engineering
         run: |
-          python feature_engineering.py
+          python titanic_classification/feature_engineering.py
       - name: Execute tests
         run: pytest --cov titanic_classification --cov-report html
