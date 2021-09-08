@@ -2,7 +2,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
+    rev: v4.0.1
     hooks:
     -   id: trailing-whitespace
     -   id: check-yaml
@@ -13,7 +13,7 @@ repos:
     -   id: check-json
     -   id: check-toml
 -   repo: https://github.com/psf/black
-    rev: 21.7b0
+    rev: 21.8b0
     hooks:
     -   id: black
         args: []
@@ -29,7 +29,7 @@ repos:
         args: []
         files: .
 -   repo: https://github.com/asottile/pyupgrade  # update python syntax
-    rev: v2.24.0
+    rev: v2.25.0
     hooks:
     -   id: pyupgrade
         args: [--py36-plus]
@@ -45,6 +45,12 @@ repos:
       name: clean
       entry: make
       args: ["clean"]
+      language: system
+      pass_filenames: false
+    - id: dvc
+      name: dvc
+      entry: make
+      args: ["dvc"]
       language: system
       pass_filenames: false
 

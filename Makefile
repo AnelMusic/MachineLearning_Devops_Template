@@ -34,7 +34,7 @@ pytest:
 	pytest --cov=tests > test_coverage.txt  && \
 	pytest -v
 
-# Py Testing
+# DVC
 .PHONY: dvc
 dvc:
 	dvc add data/prediction_data.csv
@@ -42,9 +42,9 @@ dvc:
 	dvc add data/titanic_processed.csv
 	dvc add data/titanic_test_processed.csv
 	dvc add data/titanic_train_processed.csv
-	dvc push
 
-# Py Testing
+
+# Clean
 .PHONY: clean
 cean: style
 	find . -type f -name "*.DS_Store" -ls -delete
