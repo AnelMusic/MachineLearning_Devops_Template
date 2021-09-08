@@ -24,8 +24,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install -e ".[test]" --no-cache-dir
+      - name: Get Data
+        run: |
+          titanic_classification download-data 
       - name: Perform Preprocessing
         run: |
           python titanic_classification/data.py
       - name: Execute tests
-        run: pytest --cov titanic_classification --cov-report html
+        run: pytest --cov titanic_classification --cov-report html #####download_data
