@@ -52,6 +52,3 @@ def perform_feature_engineering(data_frame):
     create_ticket2letter_feature(data_frame)
     create_famsize_feature(data_frame)
     create_famtype_feature(data_frame)
-
-
-perform_feature_engineering()
