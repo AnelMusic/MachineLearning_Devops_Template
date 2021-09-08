@@ -8,7 +8,9 @@ help:
 	@echo "venv   : creates development environment."
 	@echo "style  : runs style formatting."
 	@echo "pytest  : runs pytest."
+	@echo "dvc    : pushes versioned artifacts to blob storage."
 	@echo "clean  : cleans all unecessary files."
+
 
 # Environment
 .ONESHELL:
@@ -32,9 +34,19 @@ pytest:
 	pytest --cov=tests > test_coverage.txt  && \
 	pytest -v
 
-# Cleaning
+# Py Testing
+.PHONY: dvc
+dvc:
+	dvc add data/prediction_data.csv
+	dvc add data/titanic.csv
+	dvc add data/titanic_processed.csv
+	dvc add data/titanic_test_processed.csv
+	dvc add data/titanic_train_processed.csv
+	dvc push
+
+# Py Testing
 .PHONY: clean
-clean:
+cean: style
 	find . -type f -name "*.DS_Store" -ls -delete
 	find . | grep -E "(__pycache__|\.pyc|\.pyo)" | xargs rm -rf
 	find . | grep -E ".pytest_cache" | xargs rm -rf
