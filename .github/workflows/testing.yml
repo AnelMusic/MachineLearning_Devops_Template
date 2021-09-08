@@ -24,8 +24,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install -e ".[test]" --no-cache-dir
-      - name: Perform Feature Engineering
+      - name: Perform Preprocessing
         run: |
-          python titanic_classification/feature_engineering.py
+          python titanic_classification/data.py
       - name: Execute tests
         run: pytest --cov titanic_classification --cov-report html
