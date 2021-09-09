@@ -31,4 +31,4 @@ jobs:
         run: |
           titanic_classification process-dataset
       - name: Execute tests
-        run: pytest --cov titanic_classification --cov-report html #####download_data
+        run: pytest --cov titanic_classification --cov-report html 
