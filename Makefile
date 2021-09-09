@@ -42,6 +42,9 @@ dvc:
 	dvc add data/titanic_processed.csv
 	dvc add data/titanic_test_processed.csv
 	dvc add data/titanic_train_processed.csv
+	dvc push
+
+
 
 
 # Clean
