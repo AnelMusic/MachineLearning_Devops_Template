@@ -4,7 +4,7 @@ SHELL := /bin/bash
 
 .PHONY: help
 help:
-	@echo "Commands :"
+	@echo "Commands:"
 	@echo "venv   : creates development environment."
 	@echo "style  : runs style formatting."
 	@echo "pytest  : runs pytest."
