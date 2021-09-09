@@ -7,7 +7,7 @@ help:
 	@echo "Commands:"
 	@echo "venv   : creates development environment."
 	@echo "style  : runs style formatting."
-	@echo "pytest  : runs pytest."
+	@echo "pytest : runs pytest."
 	@echo "dvc    : pushes versioned artifacts to blob storage."
 	@echo "clean  : cleans all unecessary files."
 
