@@ -29,6 +29,6 @@ jobs:
           titanic_classification download-data 
       - name: Perform Preprocessing
         run: |
-          python titanic_classification/data.py
+          python titanic_classification process-dataset
       - name: Execute tests
         run: pytest --cov titanic_classification --cov-report html #####download_data
