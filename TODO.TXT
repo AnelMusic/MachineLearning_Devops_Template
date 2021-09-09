@@ -1,9 +1,0 @@
-# units test
-#  brauche eine predict funktion mit den finalen einfachen features
-# REST API
-#
-#
-# DVC
-# precommit hooks (am ende)
-
-##
