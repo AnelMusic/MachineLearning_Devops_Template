@@ -9,7 +9,7 @@ import typer
 
 from app import config
 from app.config import logger
-from titanic_classification import utils
+from titanic_classification import data, train, utils
 
 # Ignore warning
 warnings.filterwarnings("ignore")
@@ -24,29 +24,21 @@ def download_data():
     # Download data
     utils.download_data_from_url(config.DATASET_URL)
 
-    # Sample messages (note we use configured `logger` now)
-    # logger.debug("Used for debugging your code.")
-    # logger.info("Informative messages from your code.")
-    # logger.warning("Everything works but there is something to be aware of.")
-    # logger.error("There's been a mistake with the process.")
-    # ogger.critical("There is something terribly wrong and process may terminate.")
-
 
 @app.command()
 def show_dataset_head(params_fp: Path = Path(config.CONFIG_DIR, "params.json")) -> None:
-    logger.info("TODO show_dataset_head")
+    dataset_df = utils.load_data(config.TRAIN_DATASET_PATH)
+    print(dataset_df.head())
+    logger.info("✅ Dataset head shown")
 
 
 @app.command()
-def compute_features(params_fp: Path = Path(config.CONFIG_DIR, "params.json")) -> None:
-    logger.info("TODO compute_features")
-
-
-@app.command()
-def get_features():
-    logger.info("TODO get_features")
+def process_dataset(params_fp: Path = Path(config.CONFIG_DIR, "params.json")) -> None:
+    data.process_dataset()
+    logger.info("✅ Data processed")
 
 
 @app.command()
 def train_model():
-    logger.info("TODO train_model")
+    logger.info("✅ Model trained")
+    train.train()

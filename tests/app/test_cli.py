@@ -27,22 +27,10 @@ def test_download_data():
 def test_show_dataset_head(params_fp: Path = Path(config.CONFIG_DIR, "params.json")) -> None:
     result = runner.invoke(app, ["show-dataset-head"])
     assert result.exit_code == 0
-    assert "TODO" in result.stdout
-
-
-def test_compute_features(params_fp: Path = Path(config.CONFIG_DIR, "params.json")) -> None:
-    result = runner.invoke(app, ["get-features"])
-    assert result.exit_code == 0
-    assert "TODO" in result.stdout
-
-
-def test_get_features():
-    result = runner.invoke(app, ["get-features"])
-    assert result.exit_code == 0
-    assert "TODO" in result.stdout
+    assert "Dataset head shown" in result.stdout
 
 
 def train_model():
     result = runner.invoke(app, ["train-mode"])
     assert result.exit_code == 0
-    assert "TODO" in result.stdout
+    assert "Model trained" in result.stdout

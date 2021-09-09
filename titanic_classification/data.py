@@ -85,9 +85,7 @@ def split_and_store_dataset(data_frame):
 def process_dataset():
     data_df = utils.load_data(config.TRAIN_DATASET_PATH)
     fe.perform_feature_engineering(data_df)
+    print("Created Features:")
     print(list(data_df.columns.values))
     processed_data_df = run_preprocessing_pipeline(data_df)
     split_and_store_dataset(processed_data_df)
-
-
-process_dataset()
