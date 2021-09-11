@@ -49,7 +49,7 @@ def save_best_model():
     model_info = {"params": model_params, "run_id": run_id}
 
     try:
-        with open(config.BEST_MODEL_PATH, "a") as fp:
+        with open(config.BEST_MODEL_PATH, "w") as fp:
             json.dump(model_info, fp)
     except OSError as e:
         print(repr(e))
