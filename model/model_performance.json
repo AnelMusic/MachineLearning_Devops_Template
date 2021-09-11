@@ -1,1 +1,1 @@
-{"model": "RandomForestClassifier(max_depth=3, n_estimators=200)", "cv_score": 0.8092386486752685}
+{"overall": {"precision": 0.8089359430141553, "recall": 0.7877094972067039, "f1": 0.7689292022674992, "num_samples": 179.0}, "class": {"0": {"precision": 0.7622377622377622, "recall": 0.9646017699115044, "f1": 0.8515625, "num_samples": 113.0}, "1": {"precision": 0.8888888888888888, "recall": 0.48484848484848486, "f1": 0.6274509803921569, "num_samples": 66.0}}}

@@ -65,3 +65,21 @@ def load_best_model():
     except OSError as e:
         print(repr(e))
         logger.error(repr(e))
+
+
+def load_model_performance():
+    try:
+        with open(config.BEST_MODEL_PERFORMANCE_PATH) as fp:
+            return json.load(fp)
+    except OSError as e:
+        print(repr(e))
+        logger.error(repr(e))
+
+
+def load_model_params():
+    try:
+        with open(config.BEST_MODEL_PATH) as fp:
+            return json.load(fp)
+    except OSError as e:
+        print(repr(e))
+        logger.error(repr(e))

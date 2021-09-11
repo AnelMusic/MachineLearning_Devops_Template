@@ -8,7 +8,8 @@ help:
 	@echo "venv   : creates development environment."
 	@echo "style  : runs style formatting."
 	@echo "pytest : runs pytest."
-	@echo "dvc    : pushes versioned artifacts to blob storage."
+	@echo "dvc    : pushes versioned artifacts to blob storage."	
+	@echo "api : Launch restapi on ASGI server."
 	@echo "clean  : cleans all unecessary files."
 
 
@@ -44,17 +45,41 @@ dvc:
 	dvc add data/titanic_train_processed.csv
 	dvc push
 
-
-
-
 # Clean
 .PHONY: clean
-cean: style
+clean: style
 	find . -type f -name "*.DS_Store" -ls -delete
 	find . | grep -E "(__pycache__|\.pyc|\.pyo)" | xargs rm -rf
 	find . | grep -E ".pytest_cache" | xargs rm -rf
 	find . | grep -E ".ipynb_checkpoints" | xargs rm -rf	
-	find . | grep -E "spyder_crash.log" | xargs rm -rf
-	rm -f .coverage
+
+# Clean
+.PHONY: api
+api:
+	uvicorn app.api:app \
+	--host 0.0.0.0 \
+	--port 5000 \
+	--reload \
+	--reload-dir titanic_classification \
+	--reload-dir app
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

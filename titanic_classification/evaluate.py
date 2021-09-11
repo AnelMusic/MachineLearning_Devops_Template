@@ -52,6 +52,3 @@ def eval_on_test_data():
     except OSError as e:
         print(repr(e))
         logger.error(repr(e))
-
-
-eval_on_test_data()
