@@ -37,7 +37,7 @@ if __name__ == "__main__":
     data_df_test = utils.load_data(config.PROCESSED_TEST_DATASET_PATH)
     X_test, Y_test = utils.split_to_feature_target_df(data_df_test)
 
-    estimators = int(sys.argv[1]) if len(sys.argv) > 1 else 200
+    estimators = int(sys.argv[1]) if len(sys.argv) > 1 else 250
     depth = int(sys.argv[2]) if len(sys.argv) > 2 else 3
 
     with mlflow.start_run():
