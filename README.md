@@ -44,9 +44,9 @@ source venv/bin/activate
 ```bash
 titanic_classification download-data
 ```
-  Alternatively you can pull the data from DVC that we use for Data Version Control (esentially Git for Data)
-  ```bash
-    dvc init
-    dvc remote add -d storage stores/blob
-    dvc pull
-  ```
+  > Alternatively you can pull the data from DVC that we use for Data Version Control (esentially Git for Data)
+  > ```bash
+  >   dvc init
+  >   dvc remote add -d storage stores/blob
+  >   dvc pull
+  > ```
