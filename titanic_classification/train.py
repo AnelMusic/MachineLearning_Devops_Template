@@ -13,6 +13,14 @@ from titanic_classification import utils
 
 
 def train():
+    """
+
+
+    Returns
+    -------
+    None.
+
+    """
 
     data_df = utils.load_data(config.PROCESSED_TRAIN_DATASET_PATH)
     X_train, Y_train = utils.split_to_feature_target_df(data_df)

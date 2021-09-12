@@ -16,6 +16,14 @@ Load best model not here random model
 
 
 def predict_sample_processed():
+    """
+
+
+    Returns
+    -------
+    None.
+
+    """
     data_df = utils.load_data(config.PREDICTION_USER_DATA)
 
     model = utils.load_best_model()

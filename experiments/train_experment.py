@@ -20,6 +20,26 @@ from titanic_classification import utils
 
 
 def eval_metrics(actual, pred):
+    """
+
+
+    Parameters
+    ----------
+    actual : TYPE
+        DESCRIPTION.
+    pred : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    rmse : TYPE
+        DESCRIPTION.
+    mae : TYPE
+        DESCRIPTION.
+    r2 : TYPE
+        DESCRIPTION.
+
+    """
     rmse = np.sqrt(mean_squared_error(actual, pred))
     mae = mean_absolute_error(actual, pred)
     r2 = r2_score(actual, pred)

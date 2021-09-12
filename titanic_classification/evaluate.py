@@ -15,6 +15,14 @@ from titanic_classification import utils
 
 
 def eval_on_test_data():
+    """
+
+
+    Returns
+    -------
+    None.
+
+    """
     data_df = utils.load_data(config.PROCESSED_TEST_DATASET_PATH)
     X_test, Y_test = utils.split_to_feature_target_df(data_df)
 

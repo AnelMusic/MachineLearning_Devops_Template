@@ -21,6 +21,8 @@ MODEL_DIR = Path(BASE_DIR, "model")
 # Create dirs
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
 DATA_DIR.mkdir(parents=True, exist_ok=True)
+CONFIG_DIR.mkdir(parents=True, exist_ok=True)
+MODEL_DIR.mkdir(parents=True, exist_ok=True)
 
 # URL
 DATASET_URL = "http://bit.ly/kaggletrain"
