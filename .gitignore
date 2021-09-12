@@ -13,9 +13,6 @@
 # Data
 logs/
 
-# Experiments
-mlruns/
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
