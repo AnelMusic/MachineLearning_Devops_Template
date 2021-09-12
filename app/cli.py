@@ -9,7 +9,7 @@ import typer
 
 from app import config
 from app.config import logger
-from titanic_classification import data, train, utils
+from titanic_classification import data, train, utils, evaluate
 
 # Ignore warning
 warnings.filterwarnings("ignore")
