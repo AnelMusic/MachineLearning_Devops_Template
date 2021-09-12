@@ -52,7 +52,7 @@ titanic_classification eval-model
 ```
 The expected output should look as follows:
 
-![eval_screenshot](https://user-images.githubusercontent.com/32487291/133000323-ec0b7812-40a1-4e4f-983e-2dd378214874.png)
+![eval_screenshot](https://user-images.githubusercontent.com/32487291/133000776-16a0d911-c947-409c-8f18-ce1cd6551156.png)
 
 #### 4. (Optional) Interact with the model using RESTAPI
 > We're using Uvicorn, a fast ASGI server to launch our application. 
@@ -62,6 +62,7 @@ The expected output should look as follows:
 make api
 ```
 You can ask for the model parameters using the /model_params endpoint. Try it out directly using the interactive documentation:
+
 ![api_screenshot](https://user-images.githubusercontent.com/32487291/133000727-825ea695-2eb3-4ea9-a7a3-d21dad44b4d1.png)
 
  
