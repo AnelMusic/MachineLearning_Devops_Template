@@ -52,6 +52,8 @@ titanic_classification eval-model
 ```
 The expected output should look as follows:
 
+![eval_screenshot](https://user-images.githubusercontent.com/32487291/133000819-cc1ab06c-5e2c-42b7-bbc6-936331e519c5.png)
+
 
 #### 4. (Optional) Interact with the model using RESTAPI
 > We're using Uvicorn, a fast ASGI server to launch our application. 
