@@ -1,5 +1,7 @@
 ### Wjat is this project about?
-Kaggle competitions are essentially about performing Exploretory Data Analysis (EDA) and then training a model for best performance on an appropriate metric. In practice, however, Jupyter notebooks are not enough. To be able to experiment, iterate, debug and deploy quickly and easily when working in a team, it is necessary to create a dedicated environment. It is especially important to be able to reproduce the state of a project (code, data, model).
+Kaggle competitions are essentially about performing Exploretory Data Analysis (EDA) and then training a model for best performance on an appropriate metric. 
+
+In practice, however, Jupyter notebooks are not enough. To be able to experiment, iterate, debug and deploy quickly and easily when working in a team, it is necessary to create a dedicated environment. It is especially important to be able to reproduce the state of a project (code, data, model).
 This is the core function of the so-called machine learning devops (short MLOps).
 This project can serve as a kind of template for those interested in setting up such an environment and is intended to show the main advantages.
 
