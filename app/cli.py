@@ -42,3 +42,8 @@ def process_dataset(params_fp: Path = Path(config.CONFIG_DIR, "params.json")) ->
 def train_model():
     logger.info("✅ Model trained")
     train.train()
+    
+@app.command()
+def eval_model():
+    logger.info("✅ Model Evaluated")
+    evaluate.eval_on_test_data()
