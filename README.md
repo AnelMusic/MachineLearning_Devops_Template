@@ -30,18 +30,18 @@ titanic_classification/
 
 ## Workflows
 
-1. Clone project.
+### 1. Clone project.
 ```bash
 git clone https://github.com/AnelMusic/mlops_on_titanic_dataset
 cd mlops_on_titanic_dataset
 ```
-2. Set up environment. (Routine defined in Makefile)
+### 2. Set up environment. (Routine defined in Makefile)
 > This will automatically install all dependencies defined in requirements.txt
 ```bash
 make venv
 source venv/bin/activate
 ```
-3. Download to data (Routine defined in CLI (see app/cli.py))
+### 3. Download to data (Routine defined in CLI (see app/cli.py))
 ```bash
 dvc pull
 ```
