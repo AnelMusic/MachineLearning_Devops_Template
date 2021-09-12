@@ -54,6 +54,18 @@ The expected output should look as follows:
 
 ![eval_screenshot](https://user-images.githubusercontent.com/32487291/133000323-ec0b7812-40a1-4e4f-983e-2dd378214874.png)
 
+#### 4. (Optional) Interact with the model using RESTAPI
+> We're using Uvicorn, a fast ASGI server to launch our application. 
+> The API will run on localhost port 5000 ---> http://0.0.0.0:5000
+> Hint: Use http://0.0.0.0:5000/docs to access the interactive documentation
+```bash
+make api
+```
+You can ask for the model parameters using the /model_params endpoint. Try it out directly using the interactive documentation:
+
+![api_screenshot](https://user-images.githubusercontent.com/32487291/133000522-d5d09ca1-5ce4-474c-b5c3-a0739d545a86.png)
+ 
+
 ## Basic Workflows
 
 
