@@ -62,6 +62,7 @@ The expected output should look as follows:
 make api
 ```
 You can ask for the model parameters using the /model_params endpoint. Try it out directly using the interactive documentation:
+![api_screenshot](https://user-images.githubusercontent.com/32487291/133000727-825ea695-2eb3-4ea9-a7a3-d21dad44b4d1.png)
 
  
 
