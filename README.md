@@ -69,7 +69,7 @@ You can ask for the model parameters using the /model_params endpoint. Try it ou
 
 ## Known Issues:
 - Missing docstrings in some files 
-- 
+
 ## To be implemented:
 - Deploy Docker Image
 - Deploy Streamlit Dashboard
