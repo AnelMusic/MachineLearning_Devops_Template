@@ -63,7 +63,7 @@ make api
 ```
 You can ask for the model parameters using the /model_params endpoint. Try it out directly using the interactive documentation:
 
-![api_screenshot](https://user-images.githubusercontent.com/32487291/133000522-d5d09ca1-5ce4-474c-b5c3-a0739d545a86.png)
+![api_screenshot](https://user-images.githubusercontent.com/32487291/133000522-d5d09ca1-5ce4-474c-b5c3-a0739d545a86.png =250x250)
  
 
 ## Basic Workflows
