@@ -67,10 +67,22 @@ You can ask for the model parameters using the /model_params endpoint. Try it ou
 
 ![api_screenshot](https://user-images.githubusercontent.com/32487291/133000727-825ea695-2eb3-4ea9-a7a3-d21dad44b4d1.png)
 
-## Known Issues:
-- Missing docstrings in some files 
+# Additional Information:
+#### CLI:
+> You can use the Command Line Interface to interact with the App. 
+```bash
+titanic_classification --help
+```
+#### Precommit Hooks:
+> If you commit your changes Precommit Hooks will be activated (see .pre-commit-config.yaml). 
+- Deletes unnecessary files
+- Check formatting for json, toml, yml files
+- Formats Code using Black, Flake8 and iSort
+- Exectes all tests
 
 ## To be implemented:
 - Deploy Docker Image
 - Deploy Streamlit Dashboard
 - Use Airflow to schedule, and monitor workflows
+- Missing docstrings in some files 
+- Missing Model unittest 
