@@ -28,7 +28,7 @@ titanic_classification/
 └── utils.py                  - supplementary utilities
 ```
 
-## Workflows
+## Basic Workflows
 
 #### 1. Clone project.
 ```bash
@@ -45,3 +45,15 @@ source venv/bin/activate
 ```bash
 dvc pull
 ```
+#### 4. Evaluate the (currently) best model on a test dataset
+> This will automatically load the best model (with respect to accuracy) from all MLflow experint runs
+```bash
+titanic_classification eval-model
+```
+The expected output should look as follows:
+![eval_screenshot](https://user-images.githubusercontent.com/32487291/133000323-ec0b7812-40a1-4e4f-983e-2dd378214874.png)
+
+## Basic Workflows
+
+
+
