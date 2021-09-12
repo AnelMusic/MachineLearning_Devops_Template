@@ -34,7 +34,7 @@ titanic_classification/
 ## Basic Workflows
 
 #### 1. Fork project.
-(https://github.com/AnelMusic/mlops_on_titanic_dataset/fork)
+(https://github.com/AnelMusic/MachineLearning_Devops_Template/fork)
 
 #### 2. Set up environment. (Routine defined in Makefile)
 > This will automatically install all dependencies defined in requirements.txt
