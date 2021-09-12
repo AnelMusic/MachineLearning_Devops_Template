@@ -42,11 +42,5 @@ source venv/bin/activate
 ```
 3. Download to data (Routine defined in CLI (see app/cli.py))
 ```bash
-titanic_classification download-data
+dvc pull
 ```
-  > Alternatively you can pull the data from DVC that we use for Data Version Control (esentially Git for Data)
-  > ```bash
-  >   dvc init
-  >   dvc remote add -d storage stores/blob
-  >   dvc pull
-  > ```
