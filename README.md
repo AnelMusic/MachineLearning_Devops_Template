@@ -51,6 +51,7 @@ dvc pull
 titanic_classification eval-model
 ```
 The expected output should look as follows:
+
 ![eval_screenshot](https://user-images.githubusercontent.com/32487291/133000323-ec0b7812-40a1-4e4f-983e-2dd378214874.png)
 
 ## Basic Workflows
