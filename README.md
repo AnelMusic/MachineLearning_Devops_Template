@@ -1,5 +1,7 @@
 # mlops_on_titanic_dataset
 
+
+```bash
 app/
 ├── api.py                    - FastAPI app
 └── cli.py                    - CLI app
@@ -14,3 +16,7 @@ titanic_classification/
 ├── train.py                  - training components
 ├── feature_engineering.py    - FEng components 
 └── utils.py                  - supplementary utilities
+```
+
+
+
