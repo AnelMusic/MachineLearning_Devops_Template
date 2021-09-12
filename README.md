@@ -30,7 +30,7 @@ titanic_classification/
 
 ## Workflows
 
-### 1. Clone project.
+#### 1. Clone project.
 ```bash
 git clone https://github.com/AnelMusic/mlops_on_titanic_dataset
 cd mlops_on_titanic_dataset
