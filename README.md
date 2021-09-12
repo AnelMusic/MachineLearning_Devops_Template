@@ -80,6 +80,12 @@ titanic_classification --help
 - Formats Code using Black, Flake8 and iSort
 - Exectes all tests
 
+#### Gitub Workflows:
+> If you push to master or create a pull request the project will be build on a github runner,
+- the requirements will be intalled 
+- unittests will be executed 
+- the model will be evaluated using a test dataset
+
 ## To be implemented:
 - Deploy Docker Image
 - Deploy Streamlit Dashboard
