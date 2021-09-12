@@ -28,5 +28,25 @@ titanic_classification/
 └── utils.py                  - supplementary utilities
 ```
 
+## Workflows
 
-
+1. Clone project.
+```bash
+git clone https://github.com/AnelMusic/mlops_on_titanic_dataset
+cd mlops_on_titanic_dataset
+```
+2. Set up environment. (Routine defined in Makefile)
+```bash
+make venv
+source venv/bin/activate
+```
+3. Download to data (Routine defined in CLI (see app/cli.py))
+```bash
+titanic_classification download-data
+```
+  Alternatively you can pull the data from DVC that we use for Data Version Control (esentially Git for Data)
+  ```bash
+    dvc init
+    dvc remote add -d storage stores/blob
+    dvc pull
+  ```
