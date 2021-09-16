@@ -86,7 +86,7 @@ titanic_classification --help
 - unittests will be executed 
 - the model will be evaluated using a test dataset
 
-## To be implemented:
+## To be implemented: 
 - Deploy Docker Image
 - Deploy Streamlit Dashboard
 - Use Airflow to schedule, and monitor workflows
